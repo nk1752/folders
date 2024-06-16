@@ -1,0 +1,21 @@
+name: build java base image
+on:
+  push:
+    branches:
+      - main
+
+env:
+  JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: process folder 1
+        run: |
+          echo "Processing java"
+          ls -la java-base
