@@ -3,15 +3,19 @@ on:
   push:
     branches:
       - main
+      
 jobs:
-  folder-1:
+  build-push:
     runs-on: ubuntu-latest
+    
     permissions:
       contents: read
+    
     steps:
       - name: checkout
         uses: actions/checkout@v4
+
       - name: process nodejs
         run: |
           echo "Processing nodejs"
-          ls -la nadejs-base
+          ls -la nodejs-base
